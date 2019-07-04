@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMTView.h"
 
 @interface ViewController : UIViewController
 

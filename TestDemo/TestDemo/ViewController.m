@@ -7,9 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "Masonry.h"
 
-@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) UICollectionView *collectionView;
+@interface TestLabel : UILabel
+
+@end
+
+@implementation TestLabel
+
+- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
+    CGRect textRect = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    textRect.origin.y = bounds.origin.y;
+    return textRect;
+}
+
+-(void)drawTextInRect:(CGRect)requestedRect {
+    CGRect actualRect = [self textRectForBounds:requestedRect limitedToNumberOfLines:self.numberOfLines];
+    [super drawTextInRect:actualRect];
+}
+@end
+
+@interface ViewController ()
+@property (nonatomic, strong) TestLabel *tView;
+@property (nonatomic, copy) NSString *testStr;
+@property (nonatomic, assign) BOOL isSure;
 @end
 
 @implementation ViewController
@@ -17,14 +38,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.collectionView];
+    self.isSure = NO;
     
+    self.testStr = @"原作：丸户史明（富士见Fantasia文库）\r\n角色原案：深崎暮人\r\n监督：龟井干太";
+    self.tView = [[TestLabel alloc] initWithFrame:CGRectZero];
+    self.tView.numberOfLines = 0;
+    self.tView.text = self.testStr;
+    self.tView.backgroundColor = [UIColor lightGrayColor];
+    self.tView.userInteractionEnabled = NO;
+    self.tView.lineBreakMode = NSLineBreakByWordWrapping;
+    self.tView.font = [UIFont fontWithName:@"PingFangSC-Regular" size:14];
+    [self.view addSubview:self.tView];
+    [self.tView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(12);
+        make.top.equalTo(self.view.mas_top).offset(100);
+        make.height.equalTo(@(100));
+        make.width.equalTo(@(300));
+    }];
+}
+- (IBAction)action1:(id)sender {
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Regular" size:14]};
+    CGFloat evaluateHeight = [self heightWithText:self.testStr attributes:attributes width:300];
+    CGFloat height = 0;
+    if (self.isSure) {
+        height = 59;
+        self.isSure = NO;
+    } else{
+        height = evaluateHeight;
+        self.isSure = YES;
+    }
+    [self.tView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(height));
+    }];
+}
+
+- (CGFloat)heightWithText:(NSString *)text attributes:(NSDictionary *)attributes width:(CGFloat)width {
+    if (text.length < 0 || width <= 0 || !attributes) {
+        return 0;
+    }
+    
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attributes context:nil];
+    return rect.size.height;
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.collectionView.frame = CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 100);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,29 +90,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 30;
-}
 
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
-    return cell;
-}
-
-#pragma mark -
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        flowLayout.minimumLineSpacing = 2;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-    }
-    return _collectionView;
-}
 @end
