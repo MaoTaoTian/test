@@ -90,5 +90,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)work1Function {
+    NSLog(@"work 1");
+}
 
 @end
