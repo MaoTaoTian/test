@@ -93,6 +93,7 @@
 
 - (void)work1Function {
     NSLog(@"work 1");
+    NSLog(@"1");
 }
 
 - (void)work2Function {
