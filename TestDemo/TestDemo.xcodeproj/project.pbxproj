@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E1C09BD22D0C6CB00C566E5 /* TMTTest3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C09BC22D0C6CB00C566E5 /* TMTTest3.m */; };
 		8E8EA17520B7DB4B006DA072 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EA17420B7DB4B006DA072 /* AppDelegate.m */; };
 		8E8EA17820B7DB4B006DA072 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EA17720B7DB4B006DA072 /* ViewController.m */; };
 		8E8EA17B20B7DB4B006DA072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8EA17920B7DB4B006DA072 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E1C09BB22D0C6CB00C566E5 /* TMTTest3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMTTest3.h; sourceTree = "<group>"; };
+		8E1C09BC22D0C6CB00C566E5 /* TMTTest3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMTTest3.m; sourceTree = "<group>"; };
 		8E8EA17020B7DB4B006DA072 /* TestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8EA17320B7DB4B006DA072 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E8EA17420B7DB4B006DA072 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				8E8EA17720B7DB4B006DA072 /* ViewController.m */,
 				AA43828622BB91B300CF7F6D /* TMTView.h */,
 				AA43828722BB91B300CF7F6D /* TMTView.m */,
+				8E1C09BB22D0C6CB00C566E5 /* TMTTest3.h */,
+				8E1C09BC22D0C6CB00C566E5 /* TMTTest3.m */,
 				AAFE700922CD955200D051F9 /* masonry */,
 				AA0E08C822C62D3100B1950F /* test */,
 				8E8EA17920B7DB4B006DA072 /* Main.storyboard */,
@@ -352,6 +357,7 @@
 				8E8EA17820B7DB4B006DA072 /* ViewController.m in Sources */,
 				AAFE702822CD955200D051F9 /* NSArray+MASAdditions.m in Sources */,
 				AAFE702422CD955200D051F9 /* ViewController+MASAdditions.m in Sources */,
+				8E1C09BD22D0C6CB00C566E5 /* TMTTest3.m in Sources */,
 				AAFE702522CD955200D051F9 /* MASCompositeConstraint.m in Sources */,
 				8E8EA18320B7DB4B006DA072 /* main.m in Sources */,
 				AAFE702922CD955200D051F9 /* View+MASAdditions.m in Sources */,
