@@ -99,6 +99,7 @@
 - (void)work2Function {
     NSLog(@"work 2");
     NSLog(@"2");
+    NSLog(@"3");
 }
 
 @end
