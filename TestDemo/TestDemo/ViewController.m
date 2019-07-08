@@ -55,6 +55,7 @@
         make.height.equalTo(@(100));
         make.width.equalTo(@(300));
     }];
+    NSLog(@"dev2");
 }
 - (IBAction)action1:(id)sender {
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Regular" size:14]};
