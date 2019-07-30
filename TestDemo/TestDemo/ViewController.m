@@ -106,4 +106,8 @@
     
 }
 
+- (void)function2 {
+    
+}
+
 @end
