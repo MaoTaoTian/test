@@ -102,4 +102,8 @@
     NSLog(@"3");
 }
 
+- (void)function1 {
+    
+}
+
 @end
