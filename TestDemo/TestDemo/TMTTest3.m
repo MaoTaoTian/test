@@ -9,5 +9,7 @@
 #import "TMTTest3.h"
 
 @implementation TMTTest3
-
+- (void)test {
+    NSLog(@"");
+}
 @end
