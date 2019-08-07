@@ -47,4 +47,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"");
 }
+
+- (void)test {
+    NSLog(@"");
+}
 @end
