@@ -62,6 +62,8 @@
         make.width.equalTo(@(300));
     }];
 }
+- (void)test1_1 {
+}
 - (IBAction)action1:(id)sender {
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Regular" size:14]};
     CGFloat evaluateHeight = [self heightWithText:self.testStr attributes:attributes width:300];
