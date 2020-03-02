@@ -36,7 +36,7 @@
 @implementation ViewController
 
 - (void)test1 {
-    
+    NSLog(@"");
 }
 
 - (void)viewDidLoad {
