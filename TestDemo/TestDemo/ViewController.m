@@ -38,6 +38,7 @@
 - (void)test1 {
     NSLog(@"");
     NSLog(@"");
+    NSLog(@"");
 }
 
 - (void)viewDidLoad {
