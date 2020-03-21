@@ -12,7 +12,9 @@
 - (void)test {
     NSLog(@"");
 }
+
 - (void)test1 {
     NSLog(@"");
 }
+
 @end
