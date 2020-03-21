@@ -9,9 +9,16 @@
 #import "TMTTest3.h"
 
 @implementation TMTTest3
-
-- (void)qsPritf {
-    
+- (void)test {
+    NSLog(@"");
 }
-
+- (void)test1 {
+    NSLog(@"");
+}
+- (void)test2 {
+    NSLog(@"");
+}
+- (void)test3 {
+    NSLog(@"");
+}
 @end
