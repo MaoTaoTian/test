@@ -21,7 +21,4 @@
 - (void)test3 {
     NSLog(@"");
 }
-- (void)revertTest {
-    
-}
 @end
