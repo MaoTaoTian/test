@@ -11,6 +11,7 @@
 @implementation TMTTest3
 - (void)test {
     NSLog(@"");
+    NSLog(@"");
 }
 
 - (void)test1 {
