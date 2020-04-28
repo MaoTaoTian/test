@@ -16,6 +16,7 @@
 
 - (void)test1 {
     NSLog(@"");
+    NSLog(@"");
 }
 
 @end
