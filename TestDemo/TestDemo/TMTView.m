@@ -13,6 +13,15 @@
 @end
 
 @implementation TMTView
+- (void)view_func1 {
+    
+}
+- (void)view_func2 {
+    
+}
+- (void)view_func3 {
+    
+}
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if (self = [super initWithFrame:frame style:style]) {
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 300, 400) style:style];
